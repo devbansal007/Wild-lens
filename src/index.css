@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-forest-deep: #142B22;
+  --color-forest-rich: #203D2F;
+  --color-moss: #78866B;
+  --color-moss-light: #94A386;
+  --color-ivory: #F6F4EC;
+  --color-cream: #EAE8DD;
+  --color-charcoal: #20251F;
+  --color-muted: #777C73;
+  --color-border-fine: #DCDDD2;
+  --color-border-dark: rgba(220, 221, 210, 0.12);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #142B22;
+  color: #F6F4EC;
+  overflow-x: hidden;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Custom editorial focus and selection */
+::selection {
+  background-color: #78866B;
+  color: #F6F4EC;
+}
+
+/* Subtle image scrim overlay */
+.scrim-cinematic {
+  background: linear-gradient(180deg, rgba(20, 43, 34, 0.2) 0%, rgba(20, 43, 34, 0.65) 60%, rgba(20, 43, 34, 0.95) 100%);
+}
+
+.scrim-hero {
+  background: linear-gradient(180deg, rgba(20, 43, 34, 0.4) 0%, rgba(20, 43, 34, 0.2) 40%, rgba(20, 43, 34, 0.85) 85%, #142B22 100%);
+}
+
+/* Continuous Repeating Marquee Loops */
+@keyframes marquee-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marquee-left 48s linear infinite;
+}
+
+.animate-marquee-right {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marquee-right 48s linear infinite;
+}
+
+.animate-marquee-left:hover,
+.animate-marquee-right:hover,
+.animation-paused {
+  animation-play-state: paused !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-left,
+  .animate-marquee-right {
+    animation: none;
+  }
+}

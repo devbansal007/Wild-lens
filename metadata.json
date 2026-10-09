@@ -1,0 +1,6 @@
+{
+  "name": "WildLens",
+  "description": "Immersive AI nature discovery and field journal for identifying plants, birds, trees, and insects through photography.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
